@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoSwap Shell Example</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      iframe {
+        width: 100%;
+        min-height: 100vh;
+        display: block;
+        border: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Replace this URL with the deployed Catalog URL. -->
+    <iframe
+      id="catalog-frame"
+      src="https://YOUR-CATALOG-URL.example"
+      title="EcoSwap Catalog"
+    ></iframe>
+
+    <script>
+      const approvedCatalogOrigin = "https://YOUR-CATALOG-URL.example";
+
+      window.addEventListener("message", (event) => {
+        if (event.origin !== approvedCatalogOrigin) {
+          return;
+        }
+
+        if (event.data?.source !== "ecoswap-catalog") {
+          return;
+        }
+
+        if (event.data.type === "catalog:add-to-cart") {
+          console.log("Send to Cart microfrontend:", event.data.detail);
+        }
+
+        if (event.data.type === "catalog:navigate") {
+          console.log("Shell should open:", event.data.detail.page);
+        }
+      });
+    </script>
+  </body>
+</html>

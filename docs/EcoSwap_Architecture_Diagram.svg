@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#54715a"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="7" stdDeviation="10" flood-color="#1d3a24" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="#f7faf6"/>
+  <text x="800" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#14391f">
+    EcoSwap Microfrontend Architecture
+  </text>
+  <text x="800" y="104" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#56705c">
+    Three independent live applications integrated by one shell
+  </text>
+
+  <g filter="url(#shadow)">
+    <rect x="465" y="145" width="670" height="160" rx="26" fill="#ffffff" stroke="#79ad80" stroke-width="3"/>
+    <rect x="465" y="145" width="670" height="50" rx="26" fill="#137c35"/>
+    <rect x="465" y="175" width="670" height="20" fill="#137c35"/>
+    <text x="800" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#ffffff">
+      Shell Application
+    </text>
+    <text x="800" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" fill="#263a2a">
+      Loads the three deployed URLs and controls top-level navigation
+    </text>
+    <text x="800" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#5b6c5e">
+      Integration: iframe composition + postMessage event contract
+    </text>
+  </g>
+
+  <line x1="800" y1="305" x2="800" y2="370" stroke="#54715a" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="800" y1="340" x2="290" y2="340" stroke="#54715a" stroke-width="3"/>
+  <line x1="800" y1="340" x2="1310" y2="340" stroke="#54715a" stroke-width="3"/>
+  <line x1="290" y1="340" x2="290" y2="370" stroke="#54715a" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="1310" y1="340" x2="1310" y2="370" stroke="#54715a" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="90" y="390" width="400" height="310" rx="24" fill="#ffffff" stroke="#86b88c" stroke-width="3"/>
+    <rect x="90" y="390" width="400" height="62" rx="24" fill="#e0f2e2"/>
+    <rect x="90" y="425" width="400" height="27" fill="#e0f2e2"/>
+    <text x="290" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#0c6427">
+      Catalog &amp; Discovery
+    </text>
+    <text x="290" y="482" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#2b3a2e">
+      Lit + Material Web
+    </text>
+    <text x="125" y="530" font-family="Arial, sans-serif" font-size="17" fill="#4f6253">• Home and featured products</text>
+    <text x="125" y="565" font-family="Arial, sans-serif" font-size="17" fill="#4f6253">• Product listing and filters</text>
+    <text x="125" y="600" font-family="Arial, sans-serif" font-size="17" fill="#4f6253">• Search and pagination</text>
+    <text x="125" y="635" font-family="Arial, sans-serif" font-size="17" fill="#4f6253">• Product detail page</text>
+    <text x="125" y="670" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#137c35">Independent live URL</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="600" y="390" width="400" height="310" rx="24" fill="#ffffff" stroke="#9aaca0" stroke-width="3"/>
+    <rect x="600" y="390" width="400" height="62" rx="24" fill="#eef2ed"/>
+    <rect x="600" y="425" width="400" height="27" fill="#eef2ed"/>
+    <text x="800" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#34493a">
+      Cart &amp; Checkout
+    </text>
+    <text x="800" y="482" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#2b3a2e">
+      Framework chosen by member 2
+    </text>
+    <text x="635" y="530" font-family="Arial, sans-serif" font-size="17" fill="#4f6253">• Shopping cart</text>
+    <text x="635" y="565" font-family="Arial, sans-serif" font-size="17" fill="#4f6253">• Shipping and address</text>
+    <text x="635" y="600" font-family="Arial, sans-serif" font-size="17" fill="#4f6253">• Mocked payment</text>
+    <text x="635" y="635" font-family="Arial, sans-serif" font-size="17" fill="#4f6253">• Order confirmation</text>
+    <text x="635" y="670" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#526559">Independent live URL</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1110" y="390" width="400" height="310" rx="24" fill="#ffffff" stroke="#9aaca0" stroke-width="3"/>
+    <rect x="1110" y="390" width="400" height="62" rx="24" fill="#eef2ed"/>
+    <rect x="1110" y="425" width="400" height="27" fill="#eef2ed"/>
+    <text x="1310" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#34493a">
+      Account &amp; Orders
+    </text>
+    <text x="1310" y="482" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#2b3a2e">
+      Framework chosen by member 3
+    </text>
+    <text x="1145" y="530" font-family="Arial, sans-serif" font-size="17" fill="#4f6253">• Login and registration</text>
+    <text x="1145" y="565" font-family="Arial, sans-serif" font-size="17" fill="#4f6253">• User profile</text>
+    <text x="1145" y="600" font-family="Arial, sans-serif" font-size="17" fill="#4f6253">• Order history</text>
+    <text x="1145" y="635" font-family="Arial, sans-serif" font-size="17" fill="#4f6253">• Reviews and wishlist</text>
+    <text x="1145" y="670" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#526559">Independent live URL</text>
+  </g>
+
+  <path d="M 480 745 C 630 825, 970 825, 1120 745" fill="none" stroke="#137c35" stroke-width="3" stroke-dasharray="10 8" marker-end="url(#arrow)"/>
+  <path d="M 610 720 C 530 770, 445 770, 390 720" fill="none" stroke="#54715a" stroke-width="3" stroke-dasharray="10 8" marker-end="url(#arrow)"/>
+  <text x="800" y="805" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#21452a">
+    Shared event contract: add-to-cart · wishlist-toggle · navigate
+  </text>
+
+  <rect x="300" y="842" width="1000" height="36" rx="18" fill="#e4eee2"/>
+  <text x="800" y="866" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#4c6451">
+    Each component has its own repository, build, deployment, and README. The shell only integrates live URLs.
+  </text>
+</svg>
