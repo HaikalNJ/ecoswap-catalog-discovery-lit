@@ -19,7 +19,9 @@ class CatalogApp extends LitElement {
     favoriteIds: { state: true },
     toastMessage: { state: true }
   };
-
+get isEmbedded() {
+    return window.self !== window.top;
+  }
   constructor() {
     super();
 
@@ -861,9 +863,13 @@ class CatalogApp extends LitElement {
       <a class="skip-link" href="#main-content">Skip to content</a>
 
       <header>
-        <button class="logo" type="button" @click=${this.showHome}>
-          EcoSwap
-        </button>
+        ${!this.isEmbedded
+          ? html`
+              <button class="logo" type="button" @click=${this.showHome}>
+                EcoSwap
+              </button>
+            `
+          : ""}
 
         <label class="search-box">
           <md-icon>search</md-icon>
@@ -876,31 +882,35 @@ class CatalogApp extends LitElement {
           >
         </label>
 
-        <div class="actions">
-          <div class="cart-wrapper">
-            <md-icon-button
-              aria-label="Open shopping cart"
-              @click=${() => this.requestExternalPage("cart")}
-            >
-              <md-icon>shopping_cart</md-icon>
-            </md-icon-button>
+        ${!this.isEmbedded
+          ? html`
+              <div class="actions">
+                <div class="cart-wrapper">
+                  <md-icon-button
+                    aria-label="Open shopping cart"
+                    @click=${() => this.requestExternalPage("cart")}
+                  >
+                    <md-icon>shopping_cart</md-icon>
+                  </md-icon-button>
 
-            ${this.cartCount > 0
-              ? html`
-                  <span class="cart-count" aria-label="${this.cartCount} items">
-                    ${this.cartCount}
-                  </span>
-                `
-              : ""}
-          </div>
+                  ${this.cartCount > 0
+                    ? html`
+                        <span class="cart-count" aria-label="${this.cartCount} items">
+                          ${this.cartCount}
+                        </span>
+                      `
+                    : ""}
+                </div>
 
-          <md-icon-button
-            aria-label="Open account"
-            @click=${() => this.requestExternalPage("account")}
-          >
-            <md-icon>person</md-icon>
-          </md-icon-button>
-        </div>
+                <md-icon-button
+                  aria-label="Open account"
+                  @click=${() => this.requestExternalPage("account")}
+                >
+                  <md-icon>person</md-icon>
+                </md-icon-button>
+              </div>
+            `
+          : ""}
       </header>
 
       <div
