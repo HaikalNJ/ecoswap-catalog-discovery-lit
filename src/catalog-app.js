@@ -19,7 +19,10 @@ class CatalogApp extends LitElement {
     favoriteIds: { state: true },
     toastMessage: { state: true }
   };
-get isEmbedded() {
+  // True when this app is running inside the shell's iframe (vs. opened
+  // standalone on its own). Used to hide header elements the shell already
+  // provides (logo, cart icon, account icon) so we don't show two of them.
+  get isEmbedded() {
     return window.self !== window.top;
   }
   constructor() {
